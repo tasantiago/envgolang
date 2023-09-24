@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  app:
+    build:
+      context: .
+    volumes:
+      - .:/home/appuser/app
+      - ./.docker/zsh/powerlevel10k/.p10k.zsh:/home/appuser/.p10k.zsh:delegated
+      - ./.docker/zsh/history:/home/appuser/zsh:delegated
+
+    ports:
+      - "8080:8080"
